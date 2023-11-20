@@ -27,7 +27,13 @@
                         <table id="list-usuario" class="table w-100 thead-primary">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th>Nro identidad</th>
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Telefono</th>
+                                    <th>Fecha nacimiento</th>
+                                    <th>Usuario</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                         </table>
@@ -49,41 +55,40 @@
             ajax: `${base_url}/usuario/data-table`,
             order: [],
             columns: [{
-                    data: "Codigo",
-                    name: "Codigo"
-                    title: "Nro Identidad"
+                    data: "nro_identidad",
+                    name: "nro_identidad"
                 },
                 {
-                    data: "codigo_proyecto",
-                    name: "codigo_proyecto",
-                    title: "Nombres"
+                    data: "nombre",
+                    name: "nombre"
                 },
                 {
-                    data: "fecha",
-                    name: "fecha",
-                    title: "Apellidos"
+                    data: "apellido",
+                    name: "apellido"
                 },
                 {
-                    data: "Fecha Nacimiento",
-                    name: "nombre_proyecto",
-                    title: "Nombres"
+                    data: "telefono",
+                    name: "telefono"
                 },
                 {
-                    data: "fecha_inicio",
-                    name: "fecha_inicio",
-                    title: "Nombres"
+                    data: "fecha_nacimiento",
+                    name: "fecha_nacimiento"
                 },
                 {
-                    data: "nombre_empresa",
-                    name: "nombre_empresa",
-                    title: "Nombres"
+                    data: "usuario",
+                    name: "usuario"
                 },
                 {
-                    data: "username",
-                    name: "username",
-                    title: "Nombres"
-                },
-
+                    data: "usuario_id",
+                    name: "usuario_id",
+                    render: function(data, type, row, meta) {
+                        console.log(row)
+                    return `
+                        <i class='fas fa-pencil-alt ms-text-success edit cursor-pointer evento' title='Editar' data-evento="no" data-index="" ></i>
+                        <i class='far fa-trash-alt ms-text-danger delete cursor-pointer' title='Eliminar' data-index="" ></i>
+                        `;
+                    },
+                }
             ]
         });
     </script>

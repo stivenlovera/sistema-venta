@@ -6,7 +6,7 @@
     </div>
     <div class="logo-sn logo-sm ms-d-block-sm">
         <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="index.html"><img
-                src="https://via.placeholder.com/84x41" alt="logo"> </a>
+                src="#" alt="logo"> </a>
     </div>
     <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
         <li class="ms-nav-item  ms-d-none">
@@ -76,7 +76,7 @@
         <li class="ms-nav-item ms-nav-user dropdown">
             <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false"> <img class="ms-user-img ms-img-round float-right"
-                    src="https://via.placeholder.com/270x270" alt="people"> </a>
+                    src="#" alt="people"> </a>
             <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                 <li class="dropdown-menu-header">
                     <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Dr Samuel

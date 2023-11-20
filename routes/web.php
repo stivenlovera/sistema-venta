@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Usuario\UsuarioController;
+use App\Http\Controllers\Persona\PersonaController;
+use App\Http\Controllers\Usuario\RolPermisoController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +39,22 @@ Route::prefix('rol-permiso')->group(function () {
     Route::get('edit/{id}', [RolPermisoController::class, 'edit'])->name('rol-permiso.edit');
     Route::put('update/{id}', [RolPermisoController::class, 'update'])->name('rol-permiso.update');
     Route::delete('delete/{id}', [RolPermisoController::class, 'delete'])->name('rol-permiso.delete');
+});
+
+Route::prefix('persona')->group(function () {
+    Route::get('/', [RolPermisoController::class, 'index'])->name('persona.index');
+    Route::post('store/{id}', [RolPermisoController::class, 'store'])->name('persona.store');
+    Route::get('edit/{id}', [RolPermisoController::class, 'edit'])->name('persona.edit');
+    Route::put('update/{id}', [RolPermisoController::class, 'update'])->name('persona.update');
+    Route::delete('delete/{id}', [RolPermisoController::class, 'delete'])->name('persona.delete');
+});
+
+Route::prefix('cliente')->group(function () {
+    Route::get('/', [RolPermisoController::class, 'index'])->name('cliente.index');
+    Route::post('store/{id}', [RolPermisoController::class, 'store'])->name('cliente.store');
+    Route::get('edit/{id}', [RolPermisoController::class, 'edit'])->name('cliente.edit');
+    Route::put('update/{id}', [RolPermisoController::class, 'update'])->name('cliente.update');
+    Route::delete('delete/{id}', [RolPermisoController::class, 'delete'])->name('cliente.delete');
 });
 
 Route::get('*', function () {
