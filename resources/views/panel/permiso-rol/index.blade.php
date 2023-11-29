@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb pl-0">
-                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-users"></i> Usuario</a></li>
+                    <li class="breadcrumb-item"><a href="#"><i class="far fa-user-circle"></i> Rol y permisos</a></li>
                 </ol>
             </nav>
         </div>
