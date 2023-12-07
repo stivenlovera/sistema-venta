@@ -1,10 +1,8 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Usuario\UsuarioController;
-use App\Http\Controllers\Persona\PersonaController;
 use App\Http\Controllers\Usuario\RolPermisoController;
-
+use App\Http\Controllers\Usuario\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('no-auth.login');
+Route::prefix('auth')->group(function () {
+    Route::get('/login', function () {
+        return view('no-auth.login');
+    })->name('login.index');
 });
-Route::get('welcome', [DashboardController::class, 'welcome']);
-Route::get('dashboard', [DashboardController::class, 'dashboard']);
+
+Route::get('/', [DashboardController::class, 'welcome'])->name('welcome.index');
+
+Route::prefix('tablero')->group(function () {
+    Route::get('/', [UsuarioController::class, 'index'])->name('tablero.index');
+});
 
 Route::prefix('usuario')->group(function () {
     Route::get('/', [UsuarioController::class, 'index'])->name('usuario.index');
