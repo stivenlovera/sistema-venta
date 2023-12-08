@@ -3,8 +3,7 @@
     <div class="logo-sn ms-d-block-lg">
         <a class="pl-0 ml-0 text-center" href="index.html"> <img src="#" alt="logo">
         </a>
-        <a href="#" class="text-center ms-logo-img-link"> <img src="#"
-                alt="logo"></a>
+        <a href="#" class="text-center ms-logo-img-link"> <img src="#" alt="logo"></a>
         <h5 class="text-center text-white mt-2">Ali Stiven Lovera</h5>
         <h6 class="text-center text-white mb-3">Admin</h6>
 
@@ -53,4 +52,17 @@
         </li>
         <!-- /Apps -->
     </ul>
+    @foreach (Auth::user()->obtenerMenu() as $modulo)
+        <ul>
+            <li class="menu-item">
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#dashboard"
+                    aria-expanded="false" aria-controls="dashboard">
+                    <span><i class="material-icons fs-16">dashboard</i> {{ $modulo->nombre_modulo }} </span>
+                </a>
+                <ul id="dashboard" class="collapse" aria-labelledby="dashboard" data-parent="#side-nav-accordion">
+                    <li> <a href="#">Medboard</a> </li>
+                </ul>
+            </li>
+        </ul>
+    @endforeach
 </aside>
